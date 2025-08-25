@@ -24,18 +24,19 @@ class Engine:
                     print("Clique en ", row, col)
 
                     row = self.fillBoard(col)
-                    self.controller.draw_coin(row, col)
+                    if row != None:
+                        self.controller.draw_coin(row, col)
 
-                    if self.isWin():
-                        print("Joueur a gagné", self.currentPlayer)
-                        self.score[str(self.currentPlayer)] += 1
-                        self.running = False
-                    
-                    if self.isDraw():
-                        print("Égalité !")
-                        self.running = False
+                        if self.isWin():
+                            print("Joueur a gagné", self.currentPlayer)
+                            self.score[str(self.currentPlayer)] += 1
+                            self.running = False
+                        
+                        if self.isDraw():
+                            print("Égalité !")
+                            self.running = False
 
-                    self.nextPlayer()
+                        self.nextPlayer()
 
         print("Score est ", self.score["1"], self.score["2"])
 
@@ -120,6 +121,8 @@ class Engine:
 
     def getCurrentPlayer(self):
         return self.currentPlayer
-
+    
+    def getScore(self):
+        return self.score
 
     

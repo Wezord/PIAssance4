@@ -28,4 +28,7 @@ class Controller:
     def getCellSize(self):
         return self.cellSize
 
+    def getScore(self):
+        return self.engine.getScore()
+
     
