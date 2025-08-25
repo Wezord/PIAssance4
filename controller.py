@@ -13,6 +13,12 @@ class Controller:
         self.interface.draw_board()
         self.engine.start()
 
+    def draw_coin(self, row, col):
+        self.interface.draw_coin(row, col)
+
+    def getCurrentPlayer(self):
+        return self.engine.getCurrentPlayer()
+
     def getRows(self):
         return self.row
 

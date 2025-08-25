@@ -19,3 +19,14 @@ class Interface:
                 pygame.draw.rect(screen, (255, 255, 255), rect, 2)
 
         pygame.display.flip()
+
+    def draw_coin(self, row, col):
+        player = self.controller.getCurrentPlayer()
+        cell_size = self.controller.getCellSize()
+        color = (255, 0, 0) if player == 1 else (255, 255, 0)  # Rouge pour joueur 1, jaune sinon
+
+        x = col * cell_size + cell_size // 2
+        y = row * cell_size + cell_size // 2
+
+        pygame.draw.circle(pygame.display.get_surface(), color, (x, y), 25)
+        pygame.display.flip()
