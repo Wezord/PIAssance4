@@ -9,7 +9,12 @@ class Controller:
         self.interface = interface.Interface(self)
         self.engine = engine.Engine(self)
 
-    def start(self):
+        self.gamemode = 0
+
+    def start_1_player(self):
+        pass
+
+    def start_2_player(self):
         self.interface.draw_board()
         self.engine.start()
 
